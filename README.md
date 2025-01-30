@@ -1,6 +1,14 @@
 # NIM Bootcamp
+Welcome to the NVIDIA NIM  Bootcamp! This hands-on learning experience is designed to empower developers with practical skills in building production-ready Generative AI applications using NVIDIA NIM™.
+Through this bootcamp, the attendees dive into real-world application of building a Retrieval Augmented Generation (RAG) in both cloud-based and local deployment scenarios. The comprehensive labs will guide you through:
 
-The NIM Bootcamp is designed to get developers started hands-on with using NVIDIA NIM. Attendees walk through the workflow of building a real world application of Retrieval Augmented Generation (RAG) using NIM in both, cloud based and locally deployed settings. They will also get to train low rank adapters (LoRA) models on their own custom datasets and utilise them for inference with state of the art optimised NIM container images.  
+* Setting up and operationalising NIM Docker containers  
+* Implementing and consuming REST API endpoints for inference  
+* Building an end-to-end RAG application  
+* Exploring Parameter Efficient Fine-Tuning (PEFT) techniques  
+* Training and deploying custom Low-Rank Adaptation (LoRA) models  
+* Fine-tuning adapters for state-of-the-art models like LLaMA-3 8B  
+
 ## Bootcamp Content
 
 This content contains three Labs, plus an optional LoRA finetuning notebook:
@@ -11,7 +19,6 @@ This content contains three Labs, plus an optional LoRA finetuning notebook:
 - Lab 3: Running NVIDIA NIM with LoRA Adapters  
 - [Optional Notebook] Training own adapters on custom datasets  
 - Application of NIM Blueprints (coming soon)  
-
 
 ## Tools and Frameworks
 
