@@ -1,5 +1,5 @@
 # NIM Bootcamp
-Welcome to the NVIDIA NIM  Bootcamp! This hands-on learning experience is designed to empower developers with practical skills in building production-ready Generative AI applications using NVIDIA NIM™.
+Welcome to the NVIDIA® NIM™ Bootcamp! This hands-on learning experience is designed to empower developers with practical skills in building production-ready Generative AI applications using NVIDIA® NIM™.
 Through this bootcamp, the attendees dive into real-world application of building a Retrieval Augmented Generation (RAG) in both cloud-based and local deployment scenarios. The comprehensive labs will guide you through:
 
 * Setting up and operationalising NIM Docker containers  
