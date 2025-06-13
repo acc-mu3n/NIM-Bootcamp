@@ -172,5 +172,8 @@ cython_debug/
 
 # Custom: Ignore notebook execution outputs
 workspace-nim-with-rag/jupyter_notebook/embed/
-workspace-nim-with-rag/jupyter_notebook_k8s/nim_llm_values.yaml
-workspace-nim-with-rag/jupyter_notebook_k8s/nim-llm-1.7.0.tgz
+workspace-nim-with-rag/jupyter_notebook/nim_llm_values.yaml
+workspace-nim-with-rag/jupyter_notebook/nim-llm-1.7.0.tgz
+
+# Mac 
+*.DS_Store
