@@ -1,30 +1,31 @@
-# NIM ブートキャンプ
+# NIM Bootcamp
 
-このブートキャンプは、開発者が実際のGenAIアプリケーションを構築することで、NVIDIA® NIM™を使い始めることができるように設計されています。
-ラボでは、参加者がNIM Dockerコンテナをセットアップし、推論リクエストを提供するためにREST API Endpointを利用することをガイドします。さらに、参加者は、LLaMA-3 8Bモデルのアダプターをファインチューニングする実習を体験しながら、LoRAのようなPEFT（Parameter Efficient Fine-Tuning）テクニックを使ったモデルのファインチューニングを探求します。
+This bootcamp is designed to help developers get started with NVIDIA® NIM™ by building real-world GenAI applications. The labs guide participants through setting up NIM Docker containers and utilizing REST API endpoints for serving inference requests. Additionally, attendees will explore fine-tuning models using Parameter Efficient Fine-Tuning (PEFT) techniques such as LoRA, with hands-on experience in fine-tuning adapters for the LLaMA-3 8B model.
 
-## ラボのデプロイ
+## Deploying the labs
 
-### 前提条件
+### Prerequisites
 
-このチュートリアルを実行するには、Ampereまたはそれ以降の世代の80GB GPUを最低1つ搭載したラップトップ/ワークステーション/DGXマシンが必要です。
+To run this tutorial, you will need a Laptop/Workstation/DGX machine with a minimum of 1(one) 80GB GPU of Ampere or later generation.
 
-- 最新の[Docker](https://docs.docker.com/engine/install/)をインストールし、GPUアクセスを可能にするNVIDIA Container Toolkitがインストールに含まれていることを確認してください。
-- ファインチューニングのラボでは、モデルの重みをダウンロードするためにHuggingfaceセキュリティトークンが必要です。手順は[こちらのリンク]( https://huggingface.co/docs/hub/en/security-tokens )にあります。
+- Install the latest [Docker](https://docs.docker.com/engine/install/) and ensure that the installation includes NVIDIA Container Toolkit to enable GPU access.
+- The finetuning lab requires a Huggingface security token to download model weights. Steps can be found [in the link here]( https://huggingface.co/docs/hub/en/security-tokens).
 
-### テスト環境
 
-Ampere A100 GPUを搭載したDGXマシンですべてのラボをテスト・実行しました。
+### Tested environment
 
-#### 1. 仮想環境のセットアップ
+We tested and ran all labs on a DGX machine equipped with an Ampere A100 GPU.
 
-まず、このリポジトリをクローンし、プロジェクト・ディレクトリに移動します：
+
+#### 1. Setting up a Virtual Environment
+
+First, clone this repository and navigate to the project directory:
 ```bash
 git clone https://github.com/openhackathons-org/NIM-Bootcamp/tree/main
 cd NIM-Bootcamp
 ```
 
-新しい仮想環境を作成し、アクティブにします：
+Create and activate a new virtual environment:
 ```bash
 # Create virtual environment
 python -m venv nim-bootcamp-env
@@ -33,9 +34,9 @@ python -m venv nim-bootcamp-env
 source nim-bootcamp-env/bin/activate
 ```
 
-#### 2. 必要なパッケージのインストール
+#### 2. Installing Required Packages
 
-仮想環境を起動した状態で、必要なパッケージをインストールします：
+With the virtual environment activated, install the required packages:
 ```bash
 # Upgrade pip (recommended)
 pip install --upgrade pip
@@ -44,9 +45,9 @@ pip install --upgrade pip
 pip install -r https://github.com/openhackathons-org/NIM-Bootcamp/blob/main/bootcamp_requirements.txt  
 ```
 
-#### 3. GPU アクセスの検証
+#### 3. Verifying GPU Access
 
-お使いの環境が GPU リソースにアクセスできることを確認するには、以下の Python コマンドを実行します：
+To verify that your environment can access GPU resources, run the following Python commands:
 ```python
 import torch
 
@@ -59,11 +60,11 @@ if torch.cuda.is_available():
     print(f"Device count: {torch.cuda.device_count()}")
 ```
 
-これらのコマンドは、Pythonターミナルで実行することも、簡単なスクリプトを作成することもできます。
+You can run these commands either in a Python terminal or by creating a simple script.
 
-#### 4. JupyterLab の起動
+#### 4. Starting JupyterLab
 
-ポート8888でJupyterLabを起動します：
+To start JupyterLab on port 8888:
 ```bash
 #Choose the desired workspace:
 cd workspace-nim-with-rag
@@ -77,7 +78,7 @@ jupyter lab --port 8888 --ip 0.0.0.0
 jupyter lab --port 8888 --browser="chrome"
 ```
 
-コマンドを実行すると、次のような出力が表示されるはずです：
+After running the command, you should see output similar to:
 ```
 [I 2025-01-29 10:00:00.000 LabApp] JupyterLab extension loaded from /path/to/extension
 [I 2025-01-29 10:00:00.000 LabApp] JupyterLab application directory is /path/to/app
@@ -86,36 +87,35 @@ jupyter lab --port 8888 --browser="chrome"
 [I 2025-01-29 10:00:00.000 ServerApp] http://localhost:8888/lab
 ```
 
-出力されたURLをコピーし、ブラウザに貼り付けます。トークンの入力を求められたら、ターミナルの出力でそれを見つけることができます。
+Copy the URL from the output and paste it into your browser. If prompted for a token, you can find it in the terminal output.
 
-#### トラブルシューティング
+#### Troubleshooting
 
-何らかの問題が発生した場合:
+If you encounter any issues:
 
-1. **仮想環境の問題**
-   - 仮想環境を作成する際に、正しいディレクトリにいることを確認してください。
-   - 仮想環境が有効になっていることを確認します。(ターミナルプロンプトに `(nim-bootcamp-env)` と表示されるはずです)
+1. **Virtual Environment Issues**
+   - Make sure you're in the correct directory when creating the virtual environment
+   - Verify that the virtual environment is activated (you should see `(nim-bootcamp-env)` in your terminal prompt)
 
 2. **Package Installation Issues**
    - Try updating pip before installing requirements: `pip install --upgrade pip`
    - If a package fails to install, try installing it separately
 
-3. **GPU アクセスの問題**
-   - NVIDIAドライバが正しくインストールされているか確認します。
-   - CUDAツールキットがインストールされていて、PyTorchのバージョンと一致しているか確認します。
-   - ターミナルで `nvidia-smi` を実行して GPU が認識されていることを確認します。
+3. **GPU Access Issues**
+   - Ensure NVIDIA drivers are properly installed
+   - Check if CUDA toolkit is installed and matches your PyTorch version
+   - Run `nvidia-smi` in terminal to verify GPU is recognized
 
-4. **JupyterLab アクセスの問題**
-   - ポート8888が他のアプリケーションによって使用されていないか確認してください。
-   - 他のマシンからアクセスする場合、ファイアウォール設定が接続を許可していることを確認します。
-   - ポート8888が使用できない場合は、別のポートを試してください。
+4. **JupyterLab Access Issues**
+   - Make sure port 8888 is not being used by another application
+   - If accessing from another machine, ensure firewall settings allow the connection
+   - Try a different port if 8888 is unavailable
 
-追加のヘルプが必要な場合は、GitHubリポジトリでissueをオープンして下さい。
+For additional help, please open an issue in the GitHub repository.
 
-`http://localhost:8888`でブラウザを開き、`Start_Here.ipynb`をクリックします。
-残りのラボの作業が終わり次第、`File > Shut Down`を選択してjupyterラボをシャットダウンし、ターミナルウィンドウで`exit`とタイプするか、`ctrl+d`を押してコンテナをシャットダウンします。
+Open the browser at `http://localhost:8888` and go click on the `Start_Here.ipynb`. As soon as you are done with the rest of the labs, shut down jupyter lab by selecting `File > Shut Down` and the container by typing `exit` or pressing `ctrl+d` in the terminal window.
 
-これでNIM Bootcampのビルドとデプロイは完了です！
+Congratulations, you've successfully built and deployed an NIM Bootcamp!
 
 
 
