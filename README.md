@@ -1,48 +1,45 @@
-# NIM Bootcamp
-Welcome to the NVIDIA® NIM™ Bootcamp! This hands-on learning experience is designed to empower developers with practical skills in building production-ready Generative AI applications using NVIDIA® NIM™.
-Through this bootcamp, the attendees dive into real-world application of building a Retrieval Augmented Generation (RAG) in both cloud-based and local deployment scenarios. The comprehensive labs will guide you through:
+# NVIDIA NIM ブートキャンプ
+NVIDIA® NIM™ ブートキャンプへようこそ！このハンズオン学習プログラムでは、NVIDIA® NIM™ を使用した本番環境対応の生成AIアプリケーション構築スキルを習得できます。
+参加者は「検索拡張生成（Retrieval Augmented Generation: RAG）」のクラウドベースとローカル展開の両シナリオを実践を通じて学びます。包括的なラボでは以下を指導します：
 
-* Setting up and operationalising NIM Docker containers  
-* Implementing and consuming REST API endpoints for inference  
-* Building an end-to-end RAG application  
-* Exploring Parameter Efficient Fine-Tuning (PEFT) techniques  
-* Training and deploying custom Low-Rank Adaptation (LoRA) models  
-* Fine-tuning adapters for state-of-the-art models like LLaMA-3 8B  
+* NIM Dockerコンテナのセットアップと運用  
+* 推論用REST APIエンドポイントの実装と利用 
+* エンドツーエンドRAGアプリケーションの構築 
+* PEFT(Parameter Efficient Fine-Tuning）手法の探索
+* カスタムLoRA（Low-Rank Adaptation）モデルのトレーニングとデプロイ  
+* Llama-3 8Bなど最新モデルのアダプターのファインチューニング  
 
-## Bootcamp Content
+## ブートキャンプ内容
+3つの主要ラボとオプショナルのLoRAファインチューニングNotebookから構成されます：
 
-This content contains three Labs, plus an optional LoRA finetuning notebook:
+- Lab 1: NVIDIA NIM APIを利用したRAG構築
+- Lab 2: ローカル環境でのNVIDIA NIM活用  
+- Lab 3: LoRAアダプターを用いたNIM運用  
+- [オプション] カスタムデータセットでのアダプタートレーニング 
+- NIM Blueprintsの応用（近日公開）  
 
+## 使用ツールとフレームワーク
 
-- Lab 1: Building RAG via NVIDIA NIM APIs  
-- Lab 2: Building RAG with a Localized NVIDIA NIM  
-- Lab 3: Running NVIDIA NIM with LoRA Adapters  
-- [Optional Notebook] Training own adapters on custom datasets  
-- Application of NIM Blueprints (coming soon)  
-
-## Tools and Frameworks
-
-The tools and frameworks used in the Bootcamp material are as follows:
+ブートキャンプの教材で使用するツールとフレームワークは以下の通りです：
 
 - [NVIDIA NIM™](https://developer.nvidia.com/nim)
 
 
-## Tutorial duration
+## 所要時間
 
-The total Bootcamp material would take approximately 3 hours and 30 minutes.
-
-
-## Deploying the Bootcamp Material
-
-To deploy the Labs, please refer to the deployment guide presented [here](https://github.com/openhackathons-org/NIM-Bootcamp/blob/main/Deployment_Guide.md)
+合計約3時間30分
 
 
-## Attribution
+## ブートキャンプのマテリアルのデプロイ方法
 
-This material originates from the OpenHackathons Github repository. Check out additional materials [here](https://github.com/openhackathons-org)
+ラボの展開手順は[デプロイガイド](https://github.com/openhackathons-org/NIM-Bootcamp/blob/main/Deployment_Guide.md)
+を参照して下さい。
 
-Don't forget to check out additional [Open Hackathons Resources](https://www.openhackathons.org/s/technical-resources) and join our [OpenACC and Hackathons Slack Channel](https://www.openacc.org/community#slack) to share your experience and get more help from the community.
+## 出典
 
+この教材はOpenHackathons GitHubリポジトリが起源です。追加マテリアルは [こちらから](https://github.com/openhackathons-org)ご確認下さい。
+
+[Open Hackathons Resources](https://www.openhackathons.org/s/technical-resources) の確認や、あなたの経験のシェアやコミュニティからより多くの助けを得るために[OpenACC and Hackathons Slack Channel](https://www.openacc.org/community#slack)への参加もお忘れなく！
 
 ## Licensing
 
