@@ -69,3 +69,17 @@ spec:
         emptyDir: {}
       - name: cache-storage
         emptyDir: {}
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nim-swallow-autopilot-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: nim-swallow-autopilot
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
