@@ -11,14 +11,16 @@ Through this bootcamp, the attendees dive into real-world application of buildin
 
 ## Bootcamp Content
 
-This content contains three Labs, plus an optional LoRA finetuning notebook:
+This content contains 6 Labs, plus an optional LoRA finetuning notebook:
 
 
 - Lab 1: Building RAG via NVIDIA NIM APIs  
 - Lab 2: Building RAG with a Localized NVIDIA NIM  
 - Lab 3: Running NVIDIA NIM with LoRA Adapters  
-- [Optional Notebook] Training own adapters on custom datasets  
-- Application of NIM Blueprints (coming soon)  
+- [Optional Notebook] Training own adapters on custom datasets using single-GPU and multi-GPU strategies
+- Lab 4: Multimodal NIM (VLM)
+- Lab 5: Utilising NVIDIA NIM as Agents
+- Lab 6: NVIDIA NIM Blueprints
 
 ## Tools and Frameworks
 
@@ -29,7 +31,7 @@ The tools and frameworks used in the Bootcamp material are as follows:
 
 ## Tutorial duration
 
-The total Bootcamp material would take approximately 3 hours and 30 minutes.
+The total Bootcamp material would take approximately 6 hours and 30 minutes.
 
 
 ## Deploying the Bootcamp Material
