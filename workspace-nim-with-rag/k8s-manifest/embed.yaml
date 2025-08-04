@@ -15,7 +15,7 @@ spec:
         app: nim-embedding
     spec:
       nodeSelector:
-        cloud.google.com/compute-class: "Performance"
+        cloud.google.com/compute-class: "Accelerator"
         cloud.google.com/gke-accelerator: "nvidia-l4"
       serviceAccountName: default
       containers:
