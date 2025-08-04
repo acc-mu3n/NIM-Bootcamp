@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nim-embedding-deployment
-  labels:
-    app: nim-embedding
 spec:
   replicas: 1
   selector:
@@ -14,6 +12,8 @@ spec:
       labels:
         app: nim-embedding
     spec:
+      imagePullSecrets:
+      - name: ngc-docker-registry-secret
       nodeSelector:
         cloud.google.com/compute-class: "Accelerator"
         cloud.google.com/gke-accelerator: "nvidia-l4"
@@ -22,8 +22,8 @@ spec:
       - name: nim-container
         image: nvcr.io/nim/nvidia/llama-3.2-nv-embedqa-1b-v2:1.3.0
         ports:
-        - containerPort: 8000
-          name: http-nim
+        - name: http-nim
+          containerPort: 8000
         env:
         - name: NGC_API_KEY
           valueFrom:
@@ -31,13 +31,11 @@ spec:
               name: ngc-api-key-secret
               key: NGC_API_KEY
         - name: NIM_MODEL_NAME
-          value: /model
+          value: "/model"
         - name: NIM_SERVED_MODEL_NAME
-          value: llama-3.2-nv-embedqa-1b-v2
+          value: "llama-3.2-nv-embedqa-1b-v2"
         - name: NIM_CUSTOM_MODEL_NAME
-          value: llama-3.2-nv-embedqa-1b-v2
-        - name: NIM_ENABLE_KV_CACHE_REUSE
-          value: "1"
+          value: "llama-3.2-nv-embedqa-1b-v2"
         resources:
           requests:
             cpu: "2"
@@ -45,24 +43,26 @@ spec:
             nvidia.com/gpu: "1"
           limits:
             nvidia.com/gpu: "1"
-        livenessProbe:
-          httpGet:
-            path: /v1/health/live
-            port: http-nim
-        readinessProbe:
-          httpGet:
-            path: /v1/health/ready
-            port: http-nim
         startupProbe:
           httpGet:
             path: /v1/health/ready
             port: http-nim
+          initialDelaySeconds: 40
           periodSeconds: 10
           failureThreshold: 180
-          initialDelaySeconds: 40
+        readinessProbe:
+          httpGet:
+            path: /v1/health/ready
+            port: http-nim
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /v1/health/live
+            port: http-nim
+          periodSeconds: 10
         volumeMounts:
-        - mountPath: /opt/nim/.cache
-          name: cache-storage
+        - name: cache-storage
+          mountPath: /opt/nim/.cache
       volumes:
       - name: cache-storage
         emptyDir: {}
@@ -72,10 +72,10 @@ kind: Service
 metadata:
   name: nim-embedding-service
 spec:
+  type: LoadBalancer
   selector:
     app: nim-embedding
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8000
-  type: LoadBalancer
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
