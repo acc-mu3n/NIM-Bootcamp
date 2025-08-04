@@ -42,7 +42,7 @@ spec:
           requests:
             nvidia.com/gpu: 1
             cpu: "2"
-            memory: "16Gi"
+            memory: "24Gi"
         startupProbe:
           httpGet:
             path: /v1/health/ready
