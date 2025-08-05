@@ -24,7 +24,7 @@ spec:
         - |
           apk add git-lfs && \
           git lfs install && \
-          git clone https://huggingface.co/tokyotech-llm/Llama-3.1-Swallow-8B-Instruct-v0.3 /models && \
+          git clone https://huggingface.co/tokyotech-llm/Llama-3.1-Swallow-8B-Instruct-v0.1 /models && \
           cd /models && \
           git lfs pull
         volumeMounts:
