@@ -1,24 +1,19 @@
 # NIM Bootcamp
-Welcome to the NVIDIA® NIM™ Bootcamp! This hands-on learning experience is designed to empower developers with practical skills in building production-ready Generative AI applications using NVIDIA® NIM™.
-Through this bootcamp, the attendees dive into real-world application of building a Retrieval Augmented Generation (RAG) in both cloud-based and local deployment scenarios. The comprehensive labs will guide you through:
-
-* Setting up and operationalising NIM Docker containers  
-* Implementing and consuming REST API endpoints for inference  
-* Building an end-to-end RAG application  
-* Exploring Parameter Efficient Fine-Tuning (PEFT) techniques  
-* Training and deploying custom Low-Rank Adaptation (LoRA) models  
-* Fine-tuning adapters for state-of-the-art models like LLaMA-3 8B  
+Welcome to the NVIDIA® NIM™ Bootcamp! 
+The bootcamp helps developers get started with NVIDIA® NIM™ microservices by building real-world generative AI (GenAI) applications. The labs guide participants through setting up NIM Docker containers and utilizing REST API endpoints for serving inference requests. Additionally, attendees will explore fine-tuning models using Parameter Efficient Fine-Tuning (PEFT) techniques such as Low-Rank Adaptation (LoRA) using single and multi-gpu training strategies, with hands-on experience in fine-tuning adapters for the LLaMA-3 8B model. Participants will also utilise multimodal NIM and put multiple NIM in agentic workflows using LangGraph. The bootcamp gives a hands-on overview of deploying NIM Blueprints.
 
 ## Bootcamp Content
 
-This content contains three Labs, plus an optional LoRA finetuning notebook:
+This content contains 6 Labs, plus an optional LoRA finetuning notebook:
 
 
 - Lab 1: Building RAG via NVIDIA NIM APIs  
 - Lab 2: Building RAG with a Localized NVIDIA NIM  
 - Lab 3: Running NVIDIA NIM with LoRA Adapters  
-- [Optional Notebook] Training own adapters on custom datasets  
-- Application of NIM Blueprints (coming soon)  
+- [Optional Notebook] Training own adapters on custom datasets using single-GPU and multi-GPU strategies
+- Lab 4: Multimodal NIM (VLM)
+- Lab 5: Utilising NVIDIA NIM as Agents
+- Lab 6: NVIDIA NIM Blueprints
 
 ## Tools and Frameworks
 
@@ -29,7 +24,7 @@ The tools and frameworks used in the Bootcamp material are as follows:
 
 ## Tutorial duration
 
-The total Bootcamp material would take approximately 3 hours and 30 minutes.
+The total Bootcamp material would take approximately 6 hours and 30 minutes.
 
 
 ## Deploying the Bootcamp Material
