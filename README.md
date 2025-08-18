@@ -1,4 +1,4 @@
-# NIM Bootcamp
+# NVIDIA NIM Bootcamp
 Welcome to the NVIDIA® NIM™ Bootcamp! 
 The bootcamp helps developers get started with NVIDIA® NIM™ microservices by building real-world generative AI (GenAI) applications. The labs guide participants through setting up NIM Docker containers and utilizing REST API endpoints for serving inference requests. Additionally, attendees will explore fine-tuning models using Parameter Efficient Fine-Tuning (PEFT) techniques such as Low-Rank Adaptation (LoRA) using single and multi-gpu training strategies, with hands-on experience in fine-tuning adapters for the LLaMA-3 8B model. Participants will also utilise multimodal NIM and put multiple NIM in agentic workflows using LangGraph. The bootcamp gives a hands-on overview of deploying NIM Blueprints.
 
