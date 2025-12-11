@@ -1,12 +1,12 @@
 # NIM Bootcamp
 
-This bootcamp is designed to help developers get started with NVIDIA® NIM™ by building real-world GenAI applications. The labs guide participants through setting up NIM Docker containers and utilizing REST API endpoints for serving inference requests. Additionally, attendees will explore fine-tuning models using Parameter Efficient Fine-Tuning (PEFT) techniques such as LoRA, with hands-on experience in fine-tuning adapters for the LLaMA-3 8B model.
+The NVIDIA NIM bootcamp helps developers get started with NVIDIA® NIM™ microservices by building real-world generative AI (GenAI) applications. The labs guide participants through setting up NIM Docker containers and utilizing REST API endpoints for serving inference requests. Additionally, attendees will explore fine-tuning models using Parameter Efficient Fine-Tuning (PEFT) techniques such as Low-Rank Adaptation (LoRA) using single and multi-gpu training strategies, with hands-on experience in fine-tuning adapters for the LLaMA-3 8B model. Participants will also utilise multimodal NIM and put multiple NIM in agentic workflows using LangGraph. The bootcamp gives a hands-on overview of deploying NIM Blueprints.
 
 ## Deploying the labs
 
 ### Prerequisites
 
-To run this tutorial, you will need a Laptop/Workstation/DGX machine with a minimum of 1(one) 80GB GPU of Ampere or later generation.
+To run this tutorial, you will need a Laptop/Workstation/DGX machine with a minimum of 2(two) 80GB GPU of Ampere or later generation.
 
 - Install the latest [Docker](https://docs.docker.com/engine/install/) and ensure that the installation includes NVIDIA Container Toolkit to enable GPU access.
 - The finetuning lab requires a Huggingface security token to download model weights. Steps can be found [in the link here]( https://huggingface.co/docs/hub/en/security-tokens).
